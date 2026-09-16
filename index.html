@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Engineer - Resume</title>
+    <style>
+        :root {
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-muted: #7a7a96;
+            --accent: #232946;
+            --accent-light: #3d5a80;
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --border: #e8eaf6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
+
+        /* Header */
+        header {
+            margin-bottom: 56px;
+        }
+
+        header h1 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        header .tagline {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 16px;
+        }
+
+        header .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        header .meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        header .meta span::before {
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--accent-light);
+            border-radius: 50%;
+        }
+
+        /* Section */
+        section {
+            margin-bottom: 44px;
+        }
+
+        section h2 {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* Card base */
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 22px;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 20px rgba(35, 41, 70, 0.06);
+        }
+
+        /* Profile */
+        .profile-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Skills */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: 140px 1fr;
+            gap: 12px 24px;
+            font-size: 0.92rem;
+        }
+
+        .skill-grid .label {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .skill-grid .value {
+            color: var(--text-secondary);
+        }
+
+        /* Certifications */
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 18px 22px;
+            text-decoration: none;
+            color: inherit;
+            transition: box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .cert-item:hover {
+            box-shadow: 0 4px 20px rgba(35, 41, 70, 0.06);
+            border-color: var(--accent-light);
+        }
+
+        .cert-item .icon {
+            width: 44px;
+            height: 44px;
+            background: rgba(61, 90, 128, 0.08);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cert-item .icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: var(--accent-light);
+        }
+
+        .cert-item .body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cert-item .name {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .cert-item .date {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .cert-item .arrow {
+            flex-shrink: 0;
+            color: var(--text-muted);
+            transition: color 0.2s ease;
+        }
+
+        .cert-item:hover .arrow {
+            color: var(--accent-light);
+        }
+
+        /* Projects */
+        .project-item h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .project-item h3::before {
+            content: "→";
+            color: var(--accent-light);
+            font-weight: 400;
+        }
+
+        .project-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .project-item .stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+        }
+
+        .project-item .stack span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: var(--bg);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        /* Experience */
+        .empty-state {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Footer Counter */
+        .counter {
+            text-align: center;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .counter span {
+            font-family: "SF Mono", Monaco, monospace;
+            font-weight: 600;
+            color: var(--accent);
+            margin-left: 4px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            header h1 {
+                font-size: 1.9rem;
+            }
+
+            .skill-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .cert-item {
+                padding: 16px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cloud Engineer</h1>
+            <p class="tagline">19-year-old high school graduate based in Japan</p>
+            <div class="meta">
+                <span>AWS SAA Certified</span>
+                <span>Self-taught</span>
+                <span>Japanese</span>
+            </div>
+        </header>
+
+        <section>
+            <h2>Profile</h2>
+            <div class="card">
+                <p class="profile-text">
+                    AWS Certified Solutions Architect – Associate. Currently developing practical cloud engineering skills through hands-on AWS projects, with a focus on infrastructure as code, CI/CD, and production-grade observability.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Skills</h2>
+            <div class="card">
+                <div class="skill-grid">
+                    <div class="label">Cloud</div>
+                    <div class="value">AWS fundamentals (S3, Lambda, DynamoDB, CloudFront, IAM)</div>
+                    <div class="label">Tools</div>
+                    <div class="value">Git / GitHub, Terraform (learning)</div>
+                    <div class="label">Languages</div>
+                    <div class="value">Python (learning), HTML / CSS</div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Certifications</h2>
+            <a href="https://www.credly.com/badges/b404308e-3564-49ce-a58f-792a60313d2b/linked_in?t=tl52mp" target="_blank" rel="noopener noreferrer" class="cert-item">
+                <div class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <line x1="16" y1="13" x2="8" y2="13"/>
+                        <line x1="16" y1="17" x2="8" y2="17"/>
+                        <polyline points="10 9 9 9 8 9"/>
+                    </svg>
+                </div>
+                <div class="body">
+                    <div class="name">AWS Certified Solutions Architect – Associate</div>
+                    <div class="date">September 2026 · Verified on Credly</div>
+                </div>
+                <div class="arrow">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                        <polyline points="15 3 21 3 21 9"/>
+                        <line x1="10" y1="14" x2="21" y2="3"/>
+                    </svg>
+                </div>
+            </a>
+        </section>
+
+        <section>
+            <h2>Projects</h2>
+            <div class="card project-item">
+                <h3>Cloud Resume Challenge</h3>
+                <p>A serverless resume website hosted on AWS, featuring a visitor counter backed by Lambda and DynamoDB, with infrastructure managed via Terraform and deployed through GitHub Actions CI/CD.</p>
+                <div class="stack">
+                    <span>S3</span>
+                    <span>CloudFront</span>
+                    <span>Lambda</span>
+                    <span>DynamoDB</span>
+                    <span>Terraform</span>
+                    <span>GitHub Actions</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Experience</h2>
+            <div class="card">
+                <p class="empty-state">No professional experience yet. Building production-grade skills through personal projects and AWS certifications.</p>
+            </div>
+        </section>
+
+        <div class="counter">
+            Visitors<span id="counter">0</span>
+        </div>
+    </div>
+
+        <script>
+        const API_URL = 'https://6otz3ivhz4.execute-api.us-east-1.amazonaws.com/visitor-count';
+
+        async function updateCounter() {
+            try {
+                const response = await fetch(API_URL, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+
+                if (data.count !== undefined) {
+                    document.getElementById('counter').textContent = data.count;
+                } else {
+                    document.getElementById('counter').textContent = '0';
+                }
+            } catch (error) {
+                console.error('Counter error:', error);
+                document.getElementById('counter').textContent = '0';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', updateCounter);
+    </script>
+</body>
+</html>
