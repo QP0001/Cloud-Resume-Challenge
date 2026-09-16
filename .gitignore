@@ -1,11 +1,8 @@
 # Terraform
-.terraform/
 *.tfstate
 *.tfstate.*
+.terraform/
+.terraform.lock.hcl
 crash.log
-
-# OS
-.DS_Store
-
-# 環境変数
-.env
+*.tfvars
+override.tf
