@@ -3,7 +3,6 @@
 自分の履歴書をAWS上でホスティングするポートフォリオ。
 
 ## URL
-https://yourname.com
 
 ## アーキテクチャ
 - フロントエンド：S3 + CloudFront + Route 53
