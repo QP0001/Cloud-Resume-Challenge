@@ -1,4 +1,5 @@
-**[Cloud Resume Challenge（AWS版）]**: https://cloudresumechallenge.dev/docs/the-challenge/aws/ のステップに沿って構築しました。
+## Cloud Resume Challenge（AWS版）
+**https://cloudresumechallenge.dev/docs/the-challenge/aws/** のステップに沿って構築しました。
 プログラミング経験ゼロの状態から、以下のステップを一つずつクリアしながら実装しています。
 
 ---
