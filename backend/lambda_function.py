@@ -1,11 +1,10 @@
-# Test deployment - updated
 import json
 import boto3
 
-dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('visitor-count')
-
 def lambda_handler(event, context):
+    dynamodb = boto3.resource('dynamodb')
+    table = dynamodb.Table('visitor-count')
+    
     method = event.get('httpMethod') or event.get('requestContext', {}).get('http', {}).get('method', '')
     if method == 'OPTIONS':
         return {
