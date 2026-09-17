@@ -1,14 +1,17 @@
 # Cloud Resume Challenge - AWS
 
-自分の履歴書をAWS上でホスティングするポートフォリオ。
+**19歳・高卒・AWS SAA取得者**が、プログラミング経験ゼロから挑戦したクラウドポートフォリオです。
 
-## URL
+公開URL：https://d3819481cvuung.cloudfront.net/index.html**
 
-## アーキテクチャ
-- フロントエンド：S3 + CloudFront + Route 53
-- バックエンド：API Gateway + Lambda + DynamoDB
-- IaC：Terraform
-- CI/CD：GitHub Actions
+---
 
-## 状況
-構築中
+## これは何？
+
+自分の履歴書をAWS上で公開し、ページを開いた人の数を自動でカウント・表示する仕組みを作りました。
+
+アクセスすると、ページの下に 「Visitors: ○○」と表示されます。これはAWS上で動くプログラムがリアルタイムでカウントしています。
+
+---
+
+## システム構成図
