@@ -1,20 +1,8 @@
-## Cloud Resume Challenge（AWS版）
-**https://cloudresumechallenge.dev/docs/the-challenge/aws/** のステップに沿って構築しました。
-プログラミング経験ゼロの状態から、以下のステップを一つずつクリアしながら実装しています。
+# Cloud Resume Challenge - AWS
 
----
+**19歳・高卒・AWS SAA取得者**が、[Cloud Resume Challenge（AWS版）](https://cloudresumechallenge.dev/docs/the-challenge/aws/)のステップに沿って構築したサーバーレスポートフォリオです。
 
-- フロントエンド（S3 + CloudFront + HTML/CSS/JavaScript）
-- バックエンド（API Gateway + Lambda + DynamoDB）
-- テスト（pytest + moto）
-- Infrastructure as Code（Terraform）
-- CI/CD（GitHub Actionsによる自動デプロイ）
-
-**※ Route 53のFree Tier制約を考慮し、ドメイン取得は見送り、CloudFrontデフォルトURLで運用しています。**
-
-**19歳・高卒・AWS SAA取得者**が、プログラミング経験ゼロから挑戦したクラウドポートフォリオです。
-
-**🌐 公開URL** **※現在は非公開**
+**🌐 公開URL ※現在は非公開**
 
 ---
 
