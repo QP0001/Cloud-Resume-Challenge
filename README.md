@@ -2,7 +2,7 @@
 
 **19歳・高卒・AWS SAA取得者**が、[Cloud Resume Challenge（AWS版）](https://cloudresumechallenge.dev/docs/the-challenge/aws/)のステップに沿って構築したサーバーレスポートフォリオです。
 
-**🌐 公開URL ※現在は非公開**
+**🌐 公開URL：https://d3819481cvuung.cloudfront.net/index.html**
 
 ---
 
